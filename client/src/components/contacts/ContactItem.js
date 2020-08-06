@@ -12,11 +12,11 @@ const ContactItem = ({ contact }) => {
     current,
   } = contactContext;
 
-  const { id, name, email, phone, type } = contact;
+  const { _id, name, email, phone, type } = contact;
 
   const onDelete = (e) => {
-    deleteContact(id);
-    if (current && current.id === id) {
+    deleteContact(_id);
+    if (current && current._id === _id) {
       clearCurrent();
     }
     clearFilter();
