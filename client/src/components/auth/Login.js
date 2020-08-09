@@ -72,6 +72,40 @@ const Login = (props) => {
           className="btn btn-primary btn-block"
         />
       </form>
+      <div style={{ padding: "10px", border: "#333 3px solid" }}>
+        <h3>
+          You can register with a fake email and password or login with one of
+          my dummy accounts below
+        </h3>
+        <br />
+        <p>
+          {" "}
+          <span className="text-primary" style={{ fontWeight: "bold" }}>
+            Email:
+          </span>{" "}
+          jonsnow@winterfell.com
+        </p>
+        <p>
+          <span className="text-primary" style={{ fontWeight: "bold" }}>
+            Password:
+          </span>{" "}
+          1234567
+        </p>
+        <br />
+        <p>
+          {" "}
+          <span style={{ color: "#DD261A", fontWeight: "bold" }}>
+            Email:
+          </span>{" "}
+          dabernathy@sweetwater.com
+        </p>
+        <p>
+          <span style={{ color: "#DD261A", fontWeight: "bold" }}>
+            Password:
+          </span>{" "}
+          123456
+        </p>
+      </div>
     </div>
   );
 };
