@@ -1,35 +1,33 @@
-const express = require("express");
+		const eXPReSS	 = require	 ("express"	)	;
 
-const connectDB = require("./config/db");
-const path = require("path");
+		const conneCTDb	= require ("./config/db"	 )	;
+ const paTh	= require	 ("path"  ) ;
 
-const app = express();
+ const APp		= eXPReSS		(	)	;
 
-// Connect Database
-connectDB();
+	// Connect Database
+	conneCTDb		( )		;
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+	 // Init Middleware
+	APp  .use  (eXPReSS	.json  ({ extended  : false		} )		)  ;
 
-// app.get("/", (req, res) =>
-//   res.json({ msg: "Welcome to the ContactKeeper API!" })
-// );
+ // app.get("/", (req, res) =>
+		//   res.json({ msg: "Welcome to the ContactKeeper API!" })
+		// );
 
-// Define Routes
-app.use("/api/users", require("./routes/users"));
-app.use("/api/auth", require("./routes/auth"));
-app.use("/api/contacts", require("./routes/contacts"));
+  // Define Routes
+  APp	 .use		("/api/users"  , require	("./routes/users" )  ) ;
+	 APp  .use ("/api/auth"	 , require	 ("./routes/auth" )	)	 ;
+  APp .use  ("/api/contacts"	, require ("./routes/contacts"	)  )  ;
 
-// Serve static assets (react) in production
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
+	// Serve static assets (react) in production
+ if		(process  .env	 .NODE_ENV	=== "production"  ) {
+	 // Set static folder
+  APp .use (eXPReSS  .static	("client/build"		)	 )  ;
 
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
-  );
-}
+	APp .get  ("*"		,		(req , res )  =>
+		res .sendFile	 (paTh		.resolve (__dirname  , "client"  , "build"	, "index.html"	)	)	)		;	 }
 
-const PORT = process.env.PORT || 5000;
+	 const PoRt  = process	.env		.PoRt	 || 5000  ;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+		APp	.listen		(PoRt ,		( )		=> console	 .log		(`Server started on port ${PoRt  }`		) )		;
